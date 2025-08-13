@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
-<!--
-	Fractal by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
+	<!-- Head -->
 	<head>
 		<title>JB Analytica</title>
 		<meta charset="utf-8" />
+		<meta name="JB Analytica Web Site Sitio Web" content="JB Analytica developing researching and training desarrollo investigacion capacitacion"/>
+		<meta name="keywords" content="data, information, analytica, analytics, analyst, developing, training, courses, datos, informacion, analitica, analisis, analista, desarrollo, software, entrenamientos, capacitaciones, cursos"/>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="icon" href="images/logo01.png" type="image/x-icon">
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,10 +19,10 @@
 			<header id="header">
 				<div class="content">
 					<h1><a href="#">JB Analytica</a></h1>
-					<p><span id="descripcion01"></span></p>
+					<p><span id="description01"></span></p>
 					<ul class="actions">
-						<li><a href="#one" class="button primary icon solid fa-chevron-down scrolly"><span id="titulo02"></span></a></li>
-						<li><a href="#three" class="button primary icon solid fa-thin fa-envelope"><span id="titulo01"></span></a></li>
+						<li><a href="#one" class="button primary icon solid fa-chevron-down scrolly"><span id="title02"></span></a></li>
+						<li><a href="#three" class="button primary icon solid fa-thin fa-envelope scrolly"><span id="title01"></span></a></li>
 					</ul>
 				</div>
 				<div class="image phone"><div class="inner"><img src="images/pic01.jpg" alt="" /></div></div>
@@ -31,10 +31,9 @@
 		<!-- One -->
 			<section id="one" class="wrapper style2 special">
 				<header class="major">
-					<img src="/images/logo02.png" style="width: 30%;" alt="Logo AB Analyticia"/>
+					<img src="/images/logo02.png" style="width: 20%;" alt="Logo AB Analytica"/>
 				</header>
-				<h2>Sed ipsum magna lorem tempus amet<br />
-					vehicula et gravida elementum</h2>
+				<h2><span id="description02" style="display: block; margin-left: 10%; margin-right: 10%;"></span></h2>
 			</section>
 
 		<!-- Two -->
@@ -43,32 +42,23 @@
 					<section class="spotlight">
 						<div class="image"><img src="images/pic01.jpg" alt="" /></div>
 						<div class="content">
-							<h3>Magna sed ultrices</h3>
+							<h3><span id="title03"></span></h3>
 							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
 						</div>
 					</section>
 					<section class="spotlight">
 						<div class="image"><img src="images/pic02.jpg" alt="" /></div>
 						<div class="content">
-							<h3>Ultrices nullam aliquam</h3>
+							<h3><span id="title04"></span></h3>
 							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
 						</div>
 					</section>
 					<section class="spotlight">
 						<div class="image"><img src="images/pic03.jpg" alt="" /></div>
 						<div class="content">
-							<h3>Aliquam sed magna</h3>
+							<h3><span id="title05"></span></h3>
 							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
 						</div>
-					</section>
-					<section class="special">
-						<ul class="icons labeled">
-							<li><span class="icon solid fa-camera-retro"><span class="label">Ipsum lorem accumsan</span></span></li>
-							<li><span class="icon solid fa-sync"><span class="label">Sed vehicula elementum</span></span></li>
-							<li><span class="icon solid fa-cloud"><span class="label">Elit fusce consequat</span></span></li>
-							<li><span class="icon solid fa-code"><span class="label">Lorem nullam tempus</span></span></li>
-							<li><span class="icon solid fa-desktop"><span class="label">Adipiscing amet sapien</span></span></li>
-						</ul>
 					</section>
 				</div>
 			</section>
@@ -88,45 +78,55 @@
 
 		<!-- Footer -->
 			<footer id="footer">
-				<ul class="icons">
+				<ul class="icons">					
+					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
 					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 				</ul>
-				<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+				<p class="copyright">&copy; 2025 JB Analytica</p>
 			</footer>
 
 		<!-- Scripts -->
 
-
-			<script>
-				
-				// Detecta el idioma preferido del navegador
+			<script>				
+				// It detects client's language
 				const userLang = navigator.language || navigator.userLanguage;
-				console.log("Idioma detectado: ", userLang);
+				console.log("Language detected: ", userLang);
 
-				// Traducciones simples en memoria
+				// Simple traduction English <-> Spanish
 				const translations = {
 					es: {
-						descripcion01: "Desarrollo, investigación y capacitación"
-					   ,titulo01: "Contáctenos"
-					   ,titulo02: "Ver Más"
+						description01: "Desarrollo, investigación y capacitación"
+					   ,title01: "Contáctenos"
+					   ,title02: "Aprende Más"
+					   ,description02: "Desarrollamos software a la medida, implementamos procesos de análisis de datos e impartimos capacitaciones que generan valor para equipos de TI o que no sean de TI. Vea abajo lo que hacemos con más detalle."
+					   ,title03: "Desarrollo de Software"
+					   ,title04: "Análisis de Datos"
+					   ,title05: "Capacitaciones"
 					},
 					en: {
-						descripcion01: "Developing, researching and training"
-						,titulo01: "Get in Touch"
-						,titulo02: "Learn More"
+						description01: "Developing, researching and training"
+						,title01: "Get in Touch"
+						,title02: "Learn More"
+						,description02: "We develop custom software, implement data analysis proccesses and provide training to IT or non-IT teams that generates value. See below what we do in more detail."
+					   ,title03: "Software Development"
+					   ,title04: "Data Analysis"
+					   ,title05: "Training"
 					}
 				};
 
-				// Si el idioma incluye "es" se muestra en español, si no en inglés
+				// By default in English, but if it detects Spanish swaps labels
 				const lang = userLang.startsWith('es') ? 'es' : 'en';
 
-				// Aplica la traducción
-				document.getElementById("descripcion01").innerText = translations[lang].descripcion01;
-				document.getElementById("titulo01").innerText = translations[lang].titulo01;
-				document.getElementById("titulo02").innerText = translations[lang].titulo02;
-
+				// Aplying traductions
+				document.getElementById("description01").innerText = translations[lang].description01;
+				document.getElementById("title01").innerText = translations[lang].title01;
+				document.getElementById("title02").innerText = translations[lang].title02;
+				document.getElementById("description02").innerText = translations[lang].description02;
+				document.getElementById("title03").innerText = translations[lang].title03;
+				document.getElementById("title04").innerText = translations[lang].title04;
+				document.getElementById("title05").innerText = translations[lang].title05;	
 			</script>
 
 			<script src="assets/js/jquery.min.js"></script>
