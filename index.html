@@ -1,294 +1,248 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JB Analytica | Desarrollo de Software, Análisis de Datos y Entrenamientos de Python</title>
-  <meta name="description" content="JB Analytica: desarrollo de software a la medida, análisis de datos y entrenamientos prácticos de Python." />
-  <style>
-    :root{
-      --bg:#0b0f1a; /* azul muy oscuro */
-      --card:#101628;
-      --muted:#b6bedb;
-      --text:#e9ecf8;
-      --brand:#6ac1ff; /* celeste */
-      --brand2:#7af0c1; /* verde agua */
-      --accent:#ffcc6a; /* ámbar */
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --radius: 18px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#0e1424 40%,#0b0f1a);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:auto;padding:0 20px}
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>JB Analytica</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" href="images/logo01.png" type="image/x-icon">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    /* NAV */
-    header{position:sticky;top:0;z-index:40;background:rgba(11,15,26,.7);backdrop-filter: blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;align-items:center;gap:.6rem}
-    .brand svg{filter: drop-shadow(0 4px 10px rgba(106,193,255,.35))}
-    .brand strong{font-weight:800;letter-spacing:.3px}
-    .nav-links{display:flex;gap:1rem}
-    .nav-links a{padding:.55rem .8rem;border-radius:12px;color:var(--muted)}
-    .nav-links a:hover{background:#151b30;color:var(--text)}
-    .menu-btn{display:none;background:#151b30;border:1px solid rgba(255,255,255,.08);color:var(--text);padding:.5rem .7rem;border-radius:12px}
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><img src="images/logo01.png" alt="Logo JB Analytica" class="logo01"/></li>								
+							<li><a href="#intro">JB Analytica</a></li>
+							<li><a href="#one"><span id="titulo01"></span></a></li>
+							<li><a href="#two"><span id="titulo02"></span></a></li>
+							<li><a href="#three"><span id="titulo03"></span></a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
 
-    /* HERO */
-    .hero{padding:64px 0 24px}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
-    .badge{display:inline-flex;align-items:center;gap:.5rem;background:#121935;border:1px solid rgba(255,255,255,.08);padding:.35rem .6rem;border-radius:999px;color:var(--muted);font-size:.9rem}
-    .badge .dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(45deg,var(--brand),var(--brand2))}
-    h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:.6rem 0 0}
-    .lead{color:var(--muted);font-size:1.1rem;line-height:1.7;margin:14px 0 22px}
-    .cta{display:flex;gap:.8rem;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:#142044;color:var(--text);box-shadow:var(--shadow)}
-    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#0b0f1a;border:none}
-    .btn:hover{transform:translateY(-1px)}
-    .hero-card{background: radial-gradient(80% 100% at 100% 0%, rgba(122,240,193,.15) 0%, rgba(0,0,0,0) 60%), radial-gradient(100% 100% at 0% 0%, rgba(106,193,255,.2) 0%, rgba(0,0,0,0) 50%), #0f1732;border:1px solid rgba(255,255,255,.08);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero-card pre{margin:0;background:#0c1226;padding:12px;border-radius:12px;overflow:auto}
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-    /* SECTIONS */
-    section{padding:48px 0;border-top:1px solid rgba(255,255,255,.06)}
-    section h2{font-size:clamp(22px,3.2vw,34px);margin:0 0 12px}
-    section p{color:var(--muted)}
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>JB Analytica</h1>
+							<p id="descripcion01"></p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly"><span id="descripcion02"></span></a></li>
+							</ul>
+						</div>
+					</section>
 
-    /* SERVICES */
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:linear-gradient(180deg,#101731,#0e152c);border:1px solid rgba(255,255,255,.08);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .card h3{margin:10px 0 6px}
-    .pill{display:inline-block;background:#0e1734;color:var(--muted);border:1px solid rgba(255,255,255,.08);padding:.25rem .55rem;border-radius:999px;font-size:.8rem}
-    .list{margin:10px 0 0;padding-left:18px}
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Sed ipsum dolor</h2>
+									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Feugiat consequat</h2>
+									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Ultricies aliquam</h2>
+									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<ul class="actions">
+										<li><a href="generic.html" class="button">Learn more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
 
-    /* ABOUT */
-    .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-    .stat{display:flex;gap:.7rem;align-items:center}
-    .stat b{font-size:1.4rem}
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>What we do</h2>
+							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-code"></span>
+									<h3>Lorem ipsum amet</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-lock"></span>
+									<h3>Aliquam sed nullam</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Sed erat ullam corper</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Veroeros quis lorem</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-link"></span>
+									<h3>Urna quis bibendum</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-gem"></span>
+									<h3>Aliquam urna dapibus</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
 
-    /* CONTACT */
-    form{display:grid;gap:.8rem}
-    input, textarea{width:100%;padding:.9rem 1rem;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0b1227;color:var(--text)}
-    textarea{min-height:120px}
-    .contact-box{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .muted{color:var(--muted)}
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Get in touch</h2>
+							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<span>12345 Somewhere Road #654<br />
+											Nashville, TN 00000-0000<br />
+											USA</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="#">user@untitled.tld</a>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<span>(000) 000-0000</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
 
-    /* FOOTER */
-    footer{padding:24px 0;color:var(--muted)}
+			</div>
 
-    /* RESPONSIVE */
-    @media (max-width: 900px){
-      .hero-grid, .cols{grid-template-columns:1fr}
-    }
-    @media (max-width: 720px){
-      .grid{grid-template-columns:1fr}
-      .nav-links{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#0c1329;border-bottom:1px solid rgba(255,255,255,.08);padding:12px}
-      .menu-btn{display:inline-flex}
-      .nav-open .nav-links{display:flex}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <a href="#home" class="brand" aria-label="Ir al inicio">
-        <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--brand)"/>
-              <stop offset="100%" stop-color="var(--brand2)"/>
-            </linearGradient>
-          </defs>
-          <rect x="4" y="4" width="56" height="56" rx="14" fill="#0e1734" stroke="url(#g1)"/>
-          <path d="M18 40 L26 24 L34 40 L42 24 L50 40" stroke="url(#g1)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <strong>JB Analytica</strong>
-      </a>
-      <nav>
-        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menú</button>
-        <div class="nav-links" id="menu" role="menu">
-          <a href="#home" role="menuitem">Inicio</a>
-          <a href="#quienes-somos" role="menuitem">Quiénes somos</a>
-          <a href="#servicios" role="menuitem">Servicios</a>
-          <a href="#contacto" role="menuitem">Contáctenos</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
 
-  <main id="home" class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="badge"><span class="dot"></span> Tecnología + Datos</span>
-        <h1>Software a la medida, <span style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">análisis de datos</span> y entrenamientos de Python</h1>
-        <p class="lead">En <strong>JB Analytica</strong> construimos soluciones modernas que convierten datos en decisiones. Creamos aplicaciones, analizamos información para tu negocio y enseñamos Python de forma práctica.</p>
-        <div class="cta">
-          <a class="btn primary" href="#contacto">Hablemos de tu proyecto</a>
-          <a class="btn" href="#servicios">Ver servicios</a>
-        </div>
-      </div>
-      <div class="hero-card" aria-label="Demostración de código">
-<pre><code>// Ejemplo: cálculo de KPI en JS
-function kpiConversion(pedidos, visitas){
-  if(!visitas) return 0;
-  return (pedidos/visitas*100).toFixed(2) + "%";
-}
-console.log("Conversión:", kpiConversion(125, 2380));
-</code></pre>
-        <p class="muted" style="margin-top:8px">Pequeños detalles, gran impacto: automatizamos KPIs, reportes y tableros.</p>
-      </div>
-    </div>
-  </main>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-  <section id="servicios">
-    <div class="container">
-      <h2>Nuestros servicios</h2>
-      <p>Diseñamos soluciones end‑to‑end: del descubrimiento a la puesta en producción.</p>
-      <div class="grid" style="margin-top:16px">
-        <article class="card">
-          <span class="pill">Desarrollo de Software</span>
-          <h3>Aplicaciones web y APIs</h3>
-          <p class="muted">Arquitecturas ligeras, seguras y escalables. Prototipos ágiles y mantenimiento continuo.</p>
-          <ul class="list">
-            <li>Diseño y desarrollo de front‑end y back‑end</li>
-            <li>Integraciones con terceros (REST/GraphQL)</li>
-            <li>Automatización de procesos</li>
-          </ul>
-        </article>
-        <article class="card">
-          <span class="pill">Análisis de Datos</span>
-          <h3>Insights accionables</h3>
-          <p class="muted">Desde la limpieza y modelado hasta dashboards de negocio que impulsan decisiones.</p>
-          <ul class="list">
-            <li>ETL/ELT y calidad de datos</li>
-            <li>Visualización y tableros interactivos</li>
-            <li>Modelos predictivos básicos</li>
-          </ul>
-        </article>
-        <article class="card">
-          <span class="pill">Entrenamientos de Python</span>
-          <h3>Formación práctica</h3>
-          <p class="muted">Cursos a medida para equipos técnicos y de negocio: del cero a productivo.</p>
-          <ul class="list">
-            <li>Fundamentos de Python</li>
-            <li>Análisis de datos con pandas</li>
-            <li>Buenas prácticas y automatización</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
+			<script>
+				
+				// Detecta el idioma preferido del navegador
+				const userLang = navigator.language || navigator.userLanguage;
+				console.log("Idioma detectado: ", userLang);
 
-  <section id="quienes-somos">
-    <div class="container cols">
-      <div>
-        <h2>Quiénes somos</h2>
-        <p>Somos un equipo apasionado por crear software claro y útil. Creemos en la colaboración, la calidad y la entrega continua. Nos enfocamos en comprender el problema de negocio para proponer soluciones simples y efectivas.</p>
-        <ul class="list">
-          <li>Orientados a resultados y métricas</li>
-          <li>Transparencia y comunicación constante</li>
-          <li>Aprendizaje continuo y mejora permanente</li>
-        </ul>
-      </div>
-      <aside class="card">
-        <h3>Nuestro enfoque</h3>
-        <p class="muted">Descubrir → Diseñar → Desarrollar → Medir → Iterar</p>
-        <div class="stat"><b>+50</b> <span class="muted">prototipos entregados</span></div>
-        <div class="stat"><b>+15</b> <span class="muted">equipos formados en Python</span></div>
-        <div class="stat"><b>100%</b> <span class="muted">compromiso con el éxito del cliente</span></div>
-      </aside>
-    </div>
-  </section>
+				// Traducciones simples en memoria
+				const translations = {
+					es: {
+						descripcion01: "Desarrollo, investigación y capacitación. Orgullosamente guatemaltecos, desarrollamos software a la medida, " +
+							           "realizamos procesos de análisis de datos y brindamos capacitaciones especializadas a equipos de TI."
+					    ,descripcion02: "VER MÁS"
+						,titulo01: "QUIÉNES SOMOS"
+						,titulo02: "QUÉ HACEMOS"
+						,titulo03: "CONTÁCTENOS"
+					},
+					en: {
+						descripcion01: "Developing, researching and training. Proudly Guatemalan, we develop custom software, " +
+							           "perform data analysis processes and provide valuable training to IT teams."	
+						,descripcion02: "LEARN MORE"		
+						,titulo01: "WHO WE ARE"
+						,titulo02: "WHAT WE DO"
+						,titulo03: "GET IN TOUCH"		
+					}
+				};
 
-  <section id="contacto">
-    <div class="container">
-      <h2>Contáctenos</h2>
-      <p>Cuéntenos sobre su reto. Respondemos en menos de 1 día hábil.</p>
-      <div class="contact-box" style="margin-top:12px">
-        <form id="contactForm" autocomplete="on">
-          <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-          <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
-          <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarle?" required></textarea>
-          <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-            <button type="submit" class="btn primary">Enviar mensaje</button>
-            <a class="btn" id="mailtoBtn" href="#">Enviar por correo</a>
-          </div>
-          <small class="muted">Este formulario usa su cliente de correo para enviar el mensaje (no requiere servidor).</small>
-        </form>
-        <aside class="card">
-          <h3>Información de contacto</h3>
-          <p class="muted">
-            <strong>Correo:</strong> <a href="mailto:contacto@jbanalytica.com">contacto@jbanalytica.com</a><br>
-            <strong>WhatsApp:</strong> <a id="waLink" href="https://wa.me/50200000000" target="_blank" rel="noopener">+502 0000 0000</a><br>
-            <strong>Ubicación:</strong> Guatemala, C.A.
-          </p>
-          <p class="muted">¿Prefiere una llamada? Programe una reunión y con gusto coordinamos.</p>
-          <a class="btn" href="#home">Volver al inicio</a>
-        </aside>
-      </div>
-    </div>
-  </section>
+				// Si el idioma incluye "es" se muestra en español, si no en inglés
+				const lang = userLang.startsWith('es') ? 'es' : 'en';
 
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <small>© <span id="year"></span> JB Analytica. Todos los derechos reservados.</small>
-      <div style="display:flex;gap:.6rem;align-items:center">
-        <a class="pill" href="#quienes-somos">Quiénes somos</a>
-        <a class="pill" href="#servicios">Servicios</a>
-        <a class="pill" href="#contacto">Contacto</a>
-      </div>
-    </div>
-  </footer>
+				// Aplica la traducción
+				document.getElementById("descripcion01").innerText = translations[lang].descripcion01;
+				document.getElementById("descripcion02").innerText = translations[lang].descripcion02;
+				document.getElementById("titulo01").innerText = translations[lang].titulo01;
+				document.getElementById("titulo02").innerText = translations[lang].titulo02;
+				document.getElementById("titulo03").innerText = translations[lang].titulo03;
 
-  <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
+			</script>
 
-    // Menú móvil
-    const menuBtn = document.getElementById('menuBtn');
-    const menu = document.getElementById('menu');
-    menuBtn.addEventListener('click', () => {
-      const open = document.body.classList.toggle('nav-open');
-      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-
-    // Envío por mailto desde el formulario
-    const form = document.getElementById('contactForm');
-    const mailtoBtn = document.getElementById('mailtoBtn');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      sendMail();
-    });
-    mailtoBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      sendMail();
-    });
-    function sendMail(){
-      const nombre = document.getElementById('nombre').value.trim();
-      const correo = document.getElementById('correo').value.trim();
-      const mensaje = document.getElementById('mensaje').value.trim();
-      if(!nombre || !correo || !mensaje){
-        alert('Por favor complete todos los campos.');
-        return;
-      }
-      const subject = encodeURIComponent('Nuevo mensaje desde la web: ' + nombre);
-      const body = encodeURIComponent(`Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`);
-      window.location.href = `mailto:contacto@jbanalytica.com?subject=${subject}&body=${body}`;
-    }
-
-    // Resaltar link activo al hacer scroll
-    const sections = ['home','quienes-somos','servicios','contacto'].map(id => document.getElementById(id));
-    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
-    const opts = {rootMargin: '-50% 0px -40% 0px', threshold: 0};
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          navLinks.forEach(a => a.classList.remove('active'));
-          const link = navLinks.find(a => a.getAttribute('href') === '#' + entry.target.id);
-          if(link) link.classList.add('active');
-        }
-      });
-    }, opts);
-    sections.forEach(s => s && obs.observe(s));
-  </script>
-</body>
+	</body>
 </html>
